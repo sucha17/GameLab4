@@ -12,7 +12,7 @@ var sfx_on = true
 var music_on = true
 
 var player :Player = null
-var current_level : String = "res://Scenes/Levels/level_01.tscn"
+var current_level : String = "res://Scenes/Levels/Level_01.tscn"
 var save_path := "user://game.save"
 var save_player_position = Vector2.ZERO
 
@@ -29,7 +29,7 @@ func restart():
 	hp = 100
 	life = 4
 	save_player_position = Vector2.ZERO
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_01.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level_01.tscn")
 
 
 func damage(val=1):

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bffmbdeogj3wo"]
 
 [ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_3xfg0"]
-[ext_resource type="PackedScene" uid="uid://towe6jtciome" path="res://Scenes/Levels/level_04.tscn" id="2_lndkr"]
+[ext_resource type="PackedScene" uid="uid://towe6jtciome" path="res://Scenes/Levels/Level_04.tscn" id="2_lndkr"]
 [ext_resource type="Texture2D" uid="uid://dvqo20wvakvq2" path="res://Assets/BG/map/background 4/orig.png" id="3_3xfg0"]
 [ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="4_ri2yq"]
 [ext_resource type="PackedScene" uid="uid://bp4l1nlnh8oq1" path="res://Scenes/Prefabs/trap_2.tscn" id="5_peesg"]
