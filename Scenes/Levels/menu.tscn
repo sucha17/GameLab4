@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6tvaxw54wsq0"]
 
 [ext_resource type="Script" uid="uid://tkynu7pd01lh" path="res://Scenes/Levels/menu.gd" id="1_hq2ph"]
+[ext_resource type="Texture2D" uid="uid://cnk8p4t8b4xlb" path="res://Assets/BG/360_F_599720625_N2U8AQzhS5y7llrp2AMAQmKL4B6nWHKT.jpg" id="2_ju4x4"]
 
 [node name="Node2D" type="Node2D" unique_id=827773846]
 script = ExtResource("1_hq2ph")
@@ -11,15 +12,21 @@ anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 524.0
 
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=465661231]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 652.0
+texture = ExtResource("2_ju4x4")
+
 [node name="btnStart" type="Button" parent="UI" unique_id=843125025]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -76.5
-offset_top = 155.0
-offset_right = 78.5
-offset_bottom = 219.0
+offset_left = -79.0
+offset_top = 130.0
+offset_right = 76.0
+offset_bottom = 194.0
 grow_horizontal = 2
 text = "Start"
 
@@ -28,10 +35,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -76.5
-offset_top = 224.0
-offset_right = 78.5
-offset_bottom = 288.0
+offset_left = -79.0
+offset_top = 199.0
+offset_right = 76.0
+offset_bottom = 263.0
 grow_horizontal = 2
 disabled = true
 text = "Continue"
@@ -41,10 +48,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -77.0
-offset_top = 294.0
-offset_right = 78.0
-offset_bottom = 358.0
+offset_left = -79.5
+offset_top = 269.0
+offset_right = 75.5
+offset_bottom = 333.0
 grow_horizontal = 2
 text = "Option"
 
@@ -53,14 +60,28 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -76.5
-offset_top = 371.0
-offset_right = 78.5
-offset_bottom = 435.0
+offset_left = -79.0
+offset_top = 346.0
+offset_right = 76.0
+offset_bottom = 410.0
 grow_horizontal = 2
 text = "Credit"
+
+[node name="ExitButton" type="Button" parent="UI" unique_id=763061600]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 419.0
+offset_right = 77.0
+offset_bottom = 483.0
+grow_horizontal = 2
+text = "Exit"
 
 [connection signal="pressed" from="UI/btnStart" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="UI/btnContinue" to="." method="_on_btn_continue_pressed"]
 [connection signal="pressed" from="UI/btnOption" to="." method="_on_btn_option_pressed"]
 [connection signal="pressed" from="UI/btnCredit" to="." method="_on_btn_credit_pressed"]
+[connection signal="pressed" from="UI/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/ExitButton" to="." method="_on_btn_credit_pressed"]

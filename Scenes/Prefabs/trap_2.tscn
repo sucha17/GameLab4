@@ -90,7 +90,7 @@ position = Vector2(1.4558879, -0.8091358)
 texture = ExtResource("1_qp3at")
 hframes = 14
 vframes = 7
-frame = 71
+frame = 85
 
 [node name="PlatformPackTilesheet" type="Sprite2D" parent="Center" unique_id=1078934043]
 position = Vector2(1.4312706, 0.0905838)
@@ -99,7 +99,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_qp3at")
 hframes = 14
 vframes = 7
-frame = 71
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=713248978]
 libraries/ = SubResource("AnimationLibrary_h7loc")

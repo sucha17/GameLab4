@@ -4,10 +4,9 @@ extends CharacterBody2D
 signal hit_enemy
 signal hit_trap 
 
-
 # --------- VARIABLES ---------- #
 
-@export_category("Player Properties") # You can tweak these changes according to your likings
+@export_category("Player Properties")
 @export var move_speed : float = 300
 @export var jump_force : float = 650
 @export var gravity : float = 30
@@ -18,7 +17,7 @@ signal hit_trap
 
 var jump_count : int = 2
 
-@export_category("Toggle Functions") # Double jump feature is disable by default (Can be toggled from inspector)
+@export_category("Toggle Functions")
 @export var double_jump : = false
 
 var is_grounded : bool = false
@@ -28,22 +27,24 @@ var is_attacking = false
 var shoot_cooldown_timer = 0.0
 var can_damage = true
 
-@onready var player_sprite : AnimationPlayer = $student/AnimationPlayer
-@onready var player_node = $student
+# โหนดอ้างอิง
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var bullet_marker = $BulletMarker
 @onready var particle_trails = $ParticleTrails
 @onready var death_particles = $DeathParticles
 
 
-
 # --------- BUILT-IN FUNCTIONS ---------- #
+
 func _ready() -> void:
 	spawn_point = global_position
 	if GameManager.save_player_position.x != 0:
-		global_position =  GameManager.save_player_position
+		global_position = GameManager.save_player_position
 		GameManager.save_player_position = Vector2.ZERO
-	player_sprite.animation_finished.connect(_on_animation_finished)
 	
+	# เชื่อมสัญญาณจบแอนิเมชันของ AnimatedSprite2D
+	sprite.animation_finished.connect(_on_animation_finished)
+
 func _physics_process(_delta):
 	is_grounded = is_on_floor()
 	movement()
@@ -54,10 +55,9 @@ func _process(_delta):
 	handle_shooting()
 	if shoot_cooldown_timer > 0:
 		shoot_cooldown_timer -= _delta
-	
+
 # --------- CUSTOM FUNCTIONS ---------- #
 
-# <-- Player Movement Code -->
 func movement():
 	# Gravity
 	if !is_on_floor():
@@ -78,7 +78,6 @@ func movement():
 		hit_trap.emit()
 	move_and_slide()
 
-# Handles jumping functionality (double jump or single jump, can be toggled from inspector)
 func handle_jumping():
 	if Input.is_action_just_pressed("Jump") and movement_enabled:
 		if is_on_floor() and !double_jump:
@@ -87,13 +86,11 @@ func handle_jumping():
 			jump()
 			jump_count -= 1
 
-# Player jump
 func jump():
 	jump_tween()
 	AudioManager.jump_sfx.play()
 	velocity.y = -jump_force
 
-# Handle Player Animations
 func player_animations():
 	particle_trails.emitting = false
 	if is_attacking:
@@ -102,28 +99,28 @@ func player_animations():
 	if is_on_floor():
 		if abs(velocity.x) > 0:
 			particle_trails.emitting = true
-			player_sprite.current_animation = "Walk"
+			sprite.play("walk")  # แก้จาก "Walk" เป็น "walk" (w ตัวเล็ก)
 		else:
-			player_sprite.current_animation = "Idle"
+			sprite.play("idle")
 	else:
-		player_sprite.current_animation = "Jump"
+		# ถ้ามี animation กระโดดให้ใส่ชื่อที่ตรงกัน (เช่น "jump") 
+		# แต่ถ้าไม่มี ให้ละไว้หรือใส่ "idle" แทนเพื่อป้องกัน error
+		if sprite.sprite_frames.has_animation("jump"):
+			sprite.play("jump")
 
-
-# Flip player sprite based on X velocity
 func flip_player():
 	if velocity.x < 0: 
-		player_node.scale.x = -1
+		sprite.flip_h = true
 	elif velocity.x > 0:
-		player_node.scale.x = 1
+		sprite.flip_h = false
 
-# Tween Animations
 func death_tween():
 	AudioManager.death_sfx.play()
 	death_particles.emitting = true
 	movement_enabled = false
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2.ZERO, 0.15)
-	tween.parallel().tween_property(self, "position", Vector2(position.x,position.y-100), 0.15)
+	tween.parallel().tween_property(self, "position", Vector2(position.x, position.y - 100), 0.15)
 	await tween.finished
 	global_position = spawn_point
 	await get_tree().create_timer(0.3).timeout
@@ -140,31 +137,34 @@ func respawn_tween():
 func jump_tween():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(0.7, 1.4), 0.1)
-	tween.tween_property(self, "scale", Vector2(1.0,1.0), 0.1)
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)
 
 func damage_tween():
 	var tween = create_tween() 
 	tween.stop(); tween.play()
 	can_damage = false
-	for i in range(1,10):
-		tween.tween_property(player_node , "modulate", Color.RED, 0.1)
-		tween.tween_property(player_node , "modulate", Color.WHITE, 0.1)
+	for i in range(1, 10):
+		tween.tween_property(self, "modulate", Color.RED, 0.1)
+		tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 	await tween.finished
 	can_damage = true
-# --------- SIGNALS ---------- #
 
-# Reset the player's position to the current level spawn point if collided with any trap
+# --------- SIGNALS & SHOOTING ---------- #
+
 func _on_collision_body_entered(body):
 	if body.is_in_group("Traps"):
 		hit_trap.emit()
-	if !can_damage : return
+	if !can_damage: return
 	if body.is_in_group("Enemy"):
+		if body.has_method("take_damage"):
+			body.take_damage(1)
+			
 		var dx = body.position.x - position.x
 		velocity.y = -400
 		if dx > 0:
 			velocity.x = -300
 		else:
-			velocity.x = 300					
+			velocity.x = 300                    
 		damage_tween()
 		hit_enemy.emit()
 
@@ -176,17 +176,16 @@ func shoot():
 	if bullet_scene == null:
 		return
 	is_attacking = true
-	player_sprite.play("Attack")
+	sprite.play("attack")
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = bullet_marker.global_position
 	var angle = deg_to_rad(randf_range(0, 20))
-	var sign_x = 1.0 if player_node.scale.x > 0 else -1.0
+	var sign_x = -1.0 if sprite.flip_h else 1.0
 	var dir = Vector2(cos(angle) * sign_x, -sin(angle))
 	get_parent().add_child(bullet)
 	bullet.shoot(dir, 600, bullet_lifetime)
 	shoot_cooldown_timer = shoot_cooldown_time
 
-func _on_animation_finished(anim_name: String) -> void:
-	if anim_name == "Attack":
+func _on_animation_finished() -> void:
+	if sprite.animation == "attack":
 		is_attacking = false
-	

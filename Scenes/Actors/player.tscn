@@ -3,8 +3,42 @@
 [ext_resource type="Script" uid="uid://ba2umthd5ts2v" path="res://Scenes/Actors/player.gd" id="1_mqoqv"]
 [ext_resource type="PackedScene" uid="uid://c5y568p25r7rl" path="res://Scenes/Prefabs/bullet.tscn" id="2_4fuvf"]
 [ext_resource type="Texture2D" uid="uid://dxp77wq60c2rr" path="res://Assets/Textures/CloudTexture.png" id="3_6q7nd"]
-[ext_resource type="PackedScene" uid="uid://bvoon20abmdym" path="res://Scenes/Sprites/student.tscn" id="4_pdd2n"]
 [ext_resource type="Texture2D" uid="uid://dia1dp34sme5l" path="res://Assets/Spritesheet/light_w.png" id="4_wn7ci"]
+[ext_resource type="Texture2D" uid="uid://bjcc285m2y6sf" path="res://Assets/Pirate/2_entity_000_ATTACK_000.png" id="5_qickf"]
+[ext_resource type="Texture2D" uid="uid://cy8nvijqxtx5c" path="res://Assets/Pirate/2_entity_000_ATTACK_001.png" id="6_euwd8"]
+[ext_resource type="Texture2D" uid="uid://cgmk26v0x0teq" path="res://Assets/Pirate/2_entity_000_ATTACK_002.png" id="7_wf5cr"]
+[ext_resource type="Texture2D" uid="uid://btwehxlguh4lq" path="res://Assets/Pirate/2_entity_000_ATTACK_003.png" id="8_rb7nl"]
+[ext_resource type="Texture2D" uid="uid://tk68d5y4wnaa" path="res://Assets/Pirate/2_entity_000_ATTACK_004.png" id="9_16krp"]
+[ext_resource type="Texture2D" uid="uid://55e4cux30fbs" path="res://Assets/Pirate/2_entity_000_ATTACK_005.png" id="10_v2cmm"]
+[ext_resource type="Texture2D" uid="uid://1x6ddiwiw1ww" path="res://Assets/Pirate/2_entity_000_ATTACK_006.png" id="11_wjg04"]
+[ext_resource type="Texture2D" uid="uid://cvea3tn01x06u" path="res://Assets/Pirate/2_entity_000_DIE_000.png" id="12_bjgj6"]
+[ext_resource type="Texture2D" uid="uid://cywp77r1iqhyy" path="res://Assets/Pirate/2_entity_000_DIE_001.png" id="13_78ipg"]
+[ext_resource type="Texture2D" uid="uid://d30tlki1jj0ub" path="res://Assets/Pirate/2_entity_000_DIE_002.png" id="14_q22ad"]
+[ext_resource type="Texture2D" uid="uid://dk6r1qvhfv1q5" path="res://Assets/Pirate/2_entity_000_DIE_003.png" id="15_svssn"]
+[ext_resource type="Texture2D" uid="uid://dbppaipkhayf6" path="res://Assets/Pirate/2_entity_000_DIE_004.png" id="16_tv3v5"]
+[ext_resource type="Texture2D" uid="uid://dhivat3qf4j3o" path="res://Assets/Pirate/2_entity_000_DIE_005.png" id="17_b32pw"]
+[ext_resource type="Texture2D" uid="uid://n6kwrbouwwua" path="res://Assets/Pirate/2_entity_000_DIE_006.png" id="18_l51xb"]
+[ext_resource type="Texture2D" uid="uid://b6cy16ykenro2" path="res://Assets/Pirate/2_entity_000_HURT_000.png" id="19_uywja"]
+[ext_resource type="Texture2D" uid="uid://dr2a41cyst00o" path="res://Assets/Pirate/2_entity_000_HURT_001.png" id="20_a8gyh"]
+[ext_resource type="Texture2D" uid="uid://bgreplmds30uu" path="res://Assets/Pirate/2_entity_000_HURT_002.png" id="21_xbf3u"]
+[ext_resource type="Texture2D" uid="uid://e6rcqi4ebjm0" path="res://Assets/Pirate/2_entity_000_HURT_003.png" id="22_kpdd7"]
+[ext_resource type="Texture2D" uid="uid://x8uf0hh8todo" path="res://Assets/Pirate/2_entity_000_HURT_004.png" id="23_6eqty"]
+[ext_resource type="Texture2D" uid="uid://ds7jve1c2bayx" path="res://Assets/Pirate/2_entity_000_HURT_005.png" id="24_uw2i4"]
+[ext_resource type="Texture2D" uid="uid://bhsb1ky8dodki" path="res://Assets/Pirate/2_entity_000_HURT_006.png" id="25_3a7lg"]
+[ext_resource type="Texture2D" uid="uid://dwpgm2ff0mg01" path="res://Assets/Pirate/2_entity_000_JUMP_000.png" id="26_bjgj6"]
+[ext_resource type="Texture2D" uid="uid://p83c5tuhi05x" path="res://Assets/Pirate/2_entity_000_JUMP_001.png" id="27_78ipg"]
+[ext_resource type="Texture2D" uid="uid://fp7uevs24wk" path="res://Assets/Pirate/2_entity_000_JUMP_002.png" id="28_q22ad"]
+[ext_resource type="Texture2D" uid="uid://bgvuvie20l0ft" path="res://Assets/Pirate/2_entity_000_JUMP_003.png" id="29_svssn"]
+[ext_resource type="Texture2D" uid="uid://cyyyn2bgk85fo" path="res://Assets/Pirate/2_entity_000_JUMP_004.png" id="30_tv3v5"]
+[ext_resource type="Texture2D" uid="uid://d21mmcif6j56c" path="res://Assets/Pirate/2_entity_000_JUMP_005.png" id="31_b32pw"]
+[ext_resource type="Texture2D" uid="uid://rhugx5xuwlbf" path="res://Assets/Pirate/2_entity_000_JUMP_006.png" id="32_l51xb"]
+[ext_resource type="Texture2D" uid="uid://bl3wbu852jstw" path="res://Assets/Pirate/2_entity_000_WALK_000.png" id="33_uywja"]
+[ext_resource type="Texture2D" uid="uid://bt1hbhr1bd76c" path="res://Assets/Pirate/2_entity_000_WALK_001.png" id="34_a8gyh"]
+[ext_resource type="Texture2D" uid="uid://bldbq7jdj1tk3" path="res://Assets/Pirate/2_entity_000_WALK_002.png" id="35_xbf3u"]
+[ext_resource type="Texture2D" uid="uid://i3vno3t1sndh" path="res://Assets/Pirate/2_entity_000_WALK_003.png" id="36_kpdd7"]
+[ext_resource type="Texture2D" uid="uid://bdd1l5pauqmfd" path="res://Assets/Pirate/2_entity_000_WALK_004.png" id="37_6eqty"]
+[ext_resource type="Texture2D" uid="uid://gkbssu8w8d3d" path="res://Assets/Pirate/2_entity_000_WALK_005.png" id="38_uw2i4"]
+[ext_resource type="Texture2D" uid="uid://c1bql8ms5cjv6" path="res://Assets/Pirate/2_entity_000_WALK_006.png" id="39_3a7lg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4sts"]
 radius = 20.985498
@@ -20,6 +54,150 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvbjh"]
 size = Vector2(43.99997, 123.99858)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2vdu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qickf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_euwd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wf5cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rb7nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_16krp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v2cmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wjg04")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_bjgj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_78ipg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q22ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_svssn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tv3v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b32pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l51xb")
+}],
+"loop": 1,
+"name": &"die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_uywja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_a8gyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xbf3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kpdd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6eqty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uw2i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3a7lg")
+}],
+"loop": 1,
+"name": &"hurt",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_bjgj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_78ipg")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_bjgj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_78ipg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_q22ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_svssn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tv3v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_b32pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_l51xb")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_uywja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_a8gyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xbf3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_kpdd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6eqty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_uw2i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3a7lg")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=2106209264 groups=["Player"]]
 rotation = 0.00042652956
@@ -84,8 +262,13 @@ position = Vector2(-0.9982939, -40.999577)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("4_wn7ci")
 
-[node name="student" parent="." unique_id=1717188345 instance=ExtResource("4_pdd2n")]
-position = Vector2(-0.9982939, 4.0004263)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1699947472]
+position = Vector2(19.979097, -49.00853)
+scale = Vector2(0.12048917, 0.11451211)
+sprite_frames = SubResource("SpriteFrames_j2vdu")
+animation = &"walk"
+frame = 5
+frame_progress = 0.31115603
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1467812523]
 limit_smoothed = true

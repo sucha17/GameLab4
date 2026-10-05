@@ -1,12 +1,70 @@
-[gd_scene format=3 uid="uid://towe6jtciome"]
+[gd_scene format=4 uid="uid://bffmbdeogj3wo"]
 
-[ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_8r7r2"]
-[ext_resource type="PackedScene" uid="uid://b46lxwc5r3dy4" path="res://Scenes/Levels/game_win.tscn" id="2_dcfph"]
+[ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_3xfg0"]
+[ext_resource type="PackedScene" uid="uid://towe6jtciome" path="res://Scenes/Levels/level_04.tscn" id="2_lndkr"]
+[ext_resource type="Texture2D" uid="uid://dvqo20wvakvq2" path="res://Assets/BG/map/background 4/orig.png" id="3_3xfg0"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="4_ri2yq"]
+[ext_resource type="PackedScene" uid="uid://bp4l1nlnh8oq1" path="res://Scenes/Prefabs/trap_2.tscn" id="5_peesg"]
+[ext_resource type="PackedScene" uid="uid://cb8e62red7kc0" path="res://Scenes/Prefabs/trap_1.tscn" id="6_aitf4"]
+[ext_resource type="PackedScene" uid="uid://b5fn4gar361ti" path="res://Scenes/Actors/enemy_base.tscn" id="6_lndkr"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/Coin.tscn" id="7_kqysg"]
+[ext_resource type="PackedScene" uid="uid://dabag2r57aued" path="res://Scenes/Prefabs/heal_potion.tscn" id="8_ggwjr"]
 
-[node name="BaseLevel" unique_id=1997201631 instance=ExtResource("1_8r7r2")]
+[node name="BaseLevel" unique_id=1997201631 instance=ExtResource("1_3xfg0")]
 
 [node name="LevelFinishDoor" parent="." index="0" unique_id=1788542095]
-next_scene = ExtResource("2_dcfph")
+position = Vector2(1729, 466)
+next_scene = ExtResource("2_lndkr")
+
+[node name="MountainA" type="Sprite2D" parent="Level/Background2" parent_id_path=PackedInt32Array(1070008654) index="0" unique_id=1142107788]
+position = Vector2(75.500015, 325.00003)
+scale = Vector2(2.0052085, 1.9938272)
+texture = ExtResource("3_3xfg0")
+
+[node name="Ground" type="TileMapLayer" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="2" unique_id=1659150000]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAcAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAADAAAAAAD+/wgAAAADAAAAAAD//wgAAAADAAAAAAAGAAkAAAADAAAAAAAHAAkAAAADAAAAAAALAAkAAAADAAAAAAD//wcAAAADAAAAAAD+/wcAAAADAAAAAAD9/wcAAAADAAAAAAD8/wcAAAADAAAAAAD7/wcAAAADAAAAAAD6/wcAAAADAAAAAAD6/wgAAAADAAAAAAD7/wgAAAADAAAAAAD8/wgAAAADAAAAAAD9/wgAAAADAAAAAAAEAAgAAAADAAAAAAADAAgAAAADAAAAAAACAAgAAAADAAAAAAABAAgAAAADAAAAAAAAAAgAAAADAAAAAAAFAAkAAAADAAAAAAAEAAkAAAADAAAAAAADAAkAAAADAAAAAAACAAkAAAADAAAAAAABAAkAAAADAAAAAAAAAAkAAAADAAAAAAD//wkAAAADAAAAAAD+/wkAAAADAAAAAAD5/wgAAAADAAAAAAD5/wkAAAADAAAAAAD6/wkAAAADAAAAAAD7/wkAAAADAAAAAAD8/wkAAAADAAAAAAD9/wkAAAADAAAAAAAIAAkAAAADAAAAAAAJAAkAAAADAAAAAAAKAAkAAAADAAAAAAAMAAkAAAADAAAAAAANAAkAAAADAAAAAAAOAAkAAAADAAAAAAAPAAkAAAADAAAAAAAQAAkAAAADAAAAAAARAAkAAAADAAAAAAASAAkAAAADAAAAAAATAAkAAAADAAAAAAAUAAkAAAADAAAAAAAVAAkAAAADAAAAAAAWAAkAAAADAAAAAAAXAAkAAAADAAAAAAAYAAkAAAADAAAAAAAZAAkAAAADAAAAAAAaAAkAAAADAAAAAAAbAAkAAAADAAAAAAABAAYAAAADAAAAAAAAAAYAAAADAAAAAAD4/wgAAAADAAAAAAD4/wkAAAADAAAAAAAHAAgAAAADAAAAAAAIAAcAAAADAAAAAAAJAAYAAAADAAAAAAAKAAUAAAADAAAAAAALAAQAAAADAAAAAAANAAYAAAADAAAAAAAKAAgAAAADAAAAAAAQAAgAAAADAAAAAAARAAcAAAADAAAAAAASAAYAAAADAAAAAAATAAUAAAADAAAAAAAUAAUAAAADAAAAAAAVAAUAAAADAAAAAAAWAAQAAAADAAAAAAAYAAYAAAADAAAAAAAaAAgAAAADAAAAAAAbAAgAAAADAAAAAAA=")
+tile_set = ExtResource("4_ri2yq")
+
+[node name="Trap2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="3" unique_id=1894763376 instance=ExtResource("5_peesg")]
+position = Vector2(864, 428)
+scale = Vector2(1, 0.52)
 
 [node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="1" unique_id=1103718868]
 text = "Level 3"
+
+[node name="EnemyBase" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="2" unique_id=756398449 instance=ExtResource("6_lndkr")]
+position = Vector2(551, 546)
+
+[node name="EnemyBase2" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="3" unique_id=1771492360 instance=ExtResource("6_lndkr")]
+position = Vector2(1250, 552)
+
+[node name="EnemyBase3" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="4" unique_id=574777794 instance=ExtResource("6_lndkr")]
+position = Vector2(1284, 293)
+
+[node name="Trap" parent="." index="8" unique_id=1930518021 instance=ExtResource("6_aitf4")]
+position = Vector2(223, 485)
+
+[node name="Trap2" parent="." index="9" unique_id=800467425 instance=ExtResource("6_aitf4")]
+position = Vector2(325, 550)
+
+[node name="Coin" parent="." index="10" unique_id=251510796 instance=ExtResource("7_kqysg")]
+position = Vector2(-359, 423)
+
+[node name="HealPotion" parent="." index="11" unique_id=242563240 instance=ExtResource("8_ggwjr")]
+position = Vector2(-417, 491)
+
+[node name="Coin2" parent="." index="12" unique_id=172190703 instance=ExtResource("7_kqysg")]
+position = Vector2(-357, 372)
+
+[node name="Coin3" parent="." index="13" unique_id=747632032 instance=ExtResource("7_kqysg")]
+position = Vector2(-359, 314)
+
+[node name="HealPotion2" parent="." index="14" unique_id=1465200385 instance=ExtResource("8_ggwjr")]
+position = Vector2(470, 485)
+
+[node name="HealPotion3" parent="." index="15" unique_id=885341071 instance=ExtResource("8_ggwjr")]
+position = Vector2(670, 408)
+
+[node name="Coin4" parent="." index="16" unique_id=56326039 instance=ExtResource("7_kqysg")]
+position = Vector2(1438, 104)
